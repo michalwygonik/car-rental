@@ -1,0 +1,7 @@
+@import url("/src/utils/colors.css");
+header {
+  background-color: var(--gray);
+  color: white;
+  font-size: 26px;
+  padding: 10px;
+}
