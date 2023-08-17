@@ -1,10 +1,24 @@
+import Form from "../Logic/Form";
 import "./Content.css";
 
 const Content = () => {
   return (
     <>
       <main className="mainContent">
-        <h2>Find the best car rental prices!</h2>
+        <video
+          src="./videos/car_riding_in_the_forest.mp4"
+          loop
+          autoPlay
+          muted
+        />
+
+        <a href="#availableCars">
+          <div className="checkOutButton">Check out our car fleet!</div>
+        </a>
+
+        <h2 id="availableCars">Available cars in our rental fleet ⬇</h2>
+
+        <Form />
       </main>
     </>
   );
