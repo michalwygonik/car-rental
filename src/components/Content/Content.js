@@ -1,4 +1,4 @@
-import Form from "../Logic/Form";
+import CarsFleet from "./CarsFleet/CarsFleet";
 import "./Content.css";
 
 const Content = () => {
@@ -17,8 +17,7 @@ const Content = () => {
         </a>
 
         <h2 id="availableCars">Available cars in our rental fleet ⬇</h2>
-
-        <Form />
+        <CarsFleet />
       </main>
     </>
   );
