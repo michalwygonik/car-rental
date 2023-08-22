@@ -4,7 +4,7 @@ import "./Content.css";
 const Content = () => {
   return (
     <>
-      <main className="mainContent">
+      <main className="main__content">
         <video
           src="./videos/car_riding_in_the_forest.mp4"
           loop
@@ -13,10 +13,9 @@ const Content = () => {
         />
 
         <a href="#availableCars">
-          <div className="checkOutButton">Check out our car fleet!</div>
+          <div className="check__out__button">Check out our car fleet!</div>
         </a>
 
-        <h2 id="availableCars">Available cars in our rental fleet ⬇</h2>
         <CarsFleet />
       </main>
     </>
