@@ -1,4 +1,5 @@
 import CarItem from "./CarItem";
+import { Cars } from "./Cars";
 import "./CarsFleet.css";
 
 const CarsFleet = () => {
@@ -9,7 +10,20 @@ const CarsFleet = () => {
       </h3>
 
       <div className="cars__fleet__container">
-        <CarItem />
+        {Cars.map((car) => {
+          return car.available ? (
+            <CarItem
+              brand={car.brand}
+              model={car.model}
+              year={car.year}
+              image={car.image}
+              gearbox={car.gearbox}
+              fuelType={car.fuel_type}
+              priceCategory={car.price_category}
+              key={car.model}
+            />
+          ) : null;
+        })}
       </div>
     </>
   );

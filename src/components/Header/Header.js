@@ -5,7 +5,7 @@ const Header = () => {
     <>
       <header>
         <h2>
-          Car Rental <i class="fa-solid fa-car-side"></i>
+          Car Rental <i className="fa-solid fa-car-side"></i>
         </h2>
       </header>
     </>

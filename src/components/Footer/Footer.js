@@ -5,17 +5,17 @@ const Footer = () => {
     <>
       <div className="footer__container">
         <div className="social__icons">
-          <a href="#">
-            <i class="fab fa-facebook-f" />
+          <a href="##">
+            <i className="fab fa-facebook-f" />
           </a>
-          <a href="#">
-            <i class="fab fa-instagram" />
+          <a href="##">
+            <i className="fab fa-instagram" />
           </a>
-          <a href="#">
-            <i class="fab fa-twitter" />
+          <a href="##">
+            <i className="fab fa-twitter" />
           </a>
-          <a href="#">
-            <i class="fab fa-youtube" />
+          <a href="##">
+            <i className="fab fa-youtube" />
           </a>
         </div>
       </div>
