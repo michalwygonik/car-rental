@@ -2,6 +2,8 @@ import Form from "./Form";
 import "./RentalWindow.css";
 import { useState } from "react";
 import { Steps } from "primereact/steps";
+import { useFormik } from "formik";
+import { basicSchema } from "./FormikSchema";
 
 const RentalWindow = (props) => {
   const {
@@ -17,6 +19,24 @@ const RentalWindow = (props) => {
     price,
     image,
   } = props;
+
+  const onSubmit = () => {
+    console.log("submitted");
+  };
+
+  const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      birth: "",
+      driver_licence: "",
+      kilometres: 10,
+      date: "",
+    },
+    validationSchema: basicSchema,
+    onSubmit,
+  });
+  console.log(errors);
 
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const stepsItems = [
@@ -78,7 +98,14 @@ const RentalWindow = (props) => {
               activeIndex={activeStepIndex}
               className="steps"
             />
-            {activeStepIndex === 0 && <Form />}
+            {activeStepIndex === 0 && (
+              <Form
+                values={values}
+                handleBlur={handleBlur}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+              />
+            )}
             {activeStepIndex === 1 && <span>Calculations</span>}
             {activeStepIndex === 2 && <span>Payment</span>}
             {activeStepIndex === 3 && <span>Finish</span>}

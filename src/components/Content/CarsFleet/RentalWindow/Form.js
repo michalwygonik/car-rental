@@ -2,21 +2,17 @@ import "./Form.css";
 import { Calendar } from "primereact/calendar";
 import { InputText } from "primereact/inputtext";
 import { Slider } from "primereact/slider";
-
 import { useState } from "react";
-
-const Form = () => {
-  const [birth, setBirth] = useState(null);
-  const [driverLicence, setDriverLicence] = useState(null);
-  const [dates, setDates] = useState(null);
+const Form = (props) => {
   let maxDate = new Date();
-  const [kilometres, setKilometres] = useState(10);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const { values, handleBlur, handleChange, handleSubmit } = props;
 
+  const [slider, setSlider] = useState(1);
+
+  console.log(values);
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form__main">
           <div className="form__main__header">Basic information</div>
 
@@ -24,10 +20,11 @@ const Form = () => {
             <label htmlFor="name">Name</label>
             <InputText
               id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={values.name}
+              onChange={handleChange}
               className="form__main__block__input"
               placeholder="Enter your name"
+              onBlur={handleBlur}
             />
           </div>
 
@@ -35,10 +32,11 @@ const Form = () => {
             <label htmlFor="email">E-Mail</label>
             <InputText
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={values.email}
+              onChange={handleChange}
               className="form__main__block__input"
               placeholder="Enter your e-mail"
+              onBlur={handleBlur}
             />
           </div>
 
@@ -47,10 +45,11 @@ const Form = () => {
             <Calendar
               id="birth"
               dateFormat="dd/mm/yy"
-              value={birth}
-              onChange={(e) => setBirth(e.value)}
+              value={values.birth}
+              onChange={handleChange}
               className="form__main__block__input"
               placeholder="Enter your birth date"
+              onBlur={handleBlur}
             />
           </div>
 
@@ -59,28 +58,41 @@ const Form = () => {
               Date of obtaining the licence
             </label>
             <Calendar
-              id="driver-licence"
-              value={driverLicence}
-              onChange={(e) => setDriverLicence(e.value)}
+              id="driver_licence"
+              value={values.driver_licence}
+              onChange={handleChange}
               view="year"
-              dateFormat="yy"
+              dateFormat="dd/mm/yy"
               maxDate={maxDate}
               className="form__main__block__input"
               placeholder="Enter date of your driver licence"
+              onBlur={handleBlur}
             />
           </div>
 
           <div className="form__main__block">
             <label htmlFor="number-of-kilometres">
-              Number of kilometres {kilometres}
+              Number of kilometres {values.kilometres}
             </label>
-            <Slider
-              value={kilometres}
-              onChange={(e) => setKilometres(e.value)}
-              className="w-14rem"
+            <input
+              type="range"
+              min={0}
+              max={400}
+              step={10}
+              value={values.kilometres}
+              onChange={handleChange}
+              className="kilometres"
+              id="kilometres"
+            />
+            {/* <Slider
+              value={slider}
+              onChange={handleChange}
+              className="kilometres"
+              id="kilometres"
               step={10}
               max={400}
-            />
+              onBlur={handleBlur}
+            /> */}
           </div>
         </div>
         <div className="form__calendar">
@@ -88,14 +100,19 @@ const Form = () => {
             Date of car rental (from - to)
           </div>
           <Calendar
-            value={dates}
-            onChange={(e) => setDates(e.value)}
+            value={values.date}
+            onChange={handleChange}
+            id="date"
             minDate={maxDate}
             selectionMode="range"
-            readOnlyInput
+            dateFormat="dd/mm/yy"
             inline
             className="calendar"
+            onBlur={handleBlur}
           />
+        </div>
+        <div className="submitButton">
+          <input type="submit" value="Submit" />
         </div>
       </form>
     </>
