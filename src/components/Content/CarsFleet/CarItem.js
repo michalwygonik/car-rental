@@ -1,9 +1,20 @@
 import "./CarsFleet.css";
 import { useState } from "react";
-import RentalWindow from "./RentalWindow";
+import RentalWindow from "./RentalWindow/RentalWindow";
 
 const CarItem = (props) => {
-  const { brand, model, year, image, gearbox, fuelType, priceCategory } = props;
+  const {
+    brand,
+    model,
+    year,
+    fuel_type,
+    horse_power,
+    gearbox,
+    combustion,
+    price_category,
+    price,
+    image,
+  } = props.car;
 
   const [rentalActive, setRentalActive] = useState(false);
 
@@ -28,21 +39,39 @@ const CarItem = (props) => {
 
           <ul className="car__card__info__list">
             <li>
-              <strong>year:</strong> {year}
+              <i className="fa-solid fa-calendar-days"></i>
+              <strong> Year:</strong> {year}
             </li>
             <li>
-              <strong>gearbox:</strong> {gearbox}
+              <i className="fa-solid fa-gear"></i>
+              <strong> Gearbox:</strong> {gearbox}
             </li>
             <li>
-              <strong>fuel type:</strong> {fuelType}
+              <i className="fa-solid fa-gas-pump"></i>
+              <strong> Fuel type:</strong> {fuel_type}
             </li>
             <li>
-              <strong>price category:</strong> {priceCategory}
+              <i className="fa-solid fa-money-check-dollar"></i>
+              <strong> Price per day:</strong> {price}$
             </li>
           </ul>
         </div>
       </div>
-      {rentalActive ? <RentalWindow endRental={handleRentalActive} /> : null}
+      {rentalActive ? (
+        <RentalWindow
+          brand={brand}
+          model={model}
+          year={year}
+          fuelType={fuel_type}
+          horsePower={horse_power}
+          gearbox={gearbox}
+          combustion={combustion}
+          priceCategory={price_category}
+          price={price}
+          image={image}
+          endRental={handleRentalActive}
+        />
+      ) : null}
     </>
   );
 };

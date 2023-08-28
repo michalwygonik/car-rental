@@ -16,3 +16,7 @@
   text-decoration: none;
   color: white;
 }
+.social__icons a:visited {
+  color: white;
+  text-decoration: none;
+}

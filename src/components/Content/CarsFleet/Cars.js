@@ -9,8 +9,9 @@ export const Cars = [
     combustion: 5,
     price_category: "Basic",
     available: true,
+    price: 120,
     image:
-      "https://www.renault.pl/agg/vn/unique/ONE_DACIA_PP_LARGE_DENSITY1/r_brandSite_carPicker_1.png?uri=https%3A%2F%2Fpl.co.rplug.renault.com%2Fproduct%2Fmodel%2FMB4%2Fmegane%2Fc%2FA-ENS_0MDL2PSL1NIVEQPT8_-TEKPN",
+      "https://renaultpasikowski.pl/wp-content/uploads/2021/11/xMEGANE-PASIKOWSKI.png.pagespeed.ic.2x8E1Xh0eC.png",
   },
   {
     brand: "Seat",
@@ -22,6 +23,7 @@ export const Cars = [
     combustion: 6,
     price_category: "Standard",
     available: true,
+    price: 150,
     image: "https://kalkulator.vwbank.pl/images/calculator/leon.png",
   },
   {
@@ -34,6 +36,7 @@ export const Cars = [
     combustion: 8,
     price_category: "Medium",
     available: true,
+    price: 250,
     image:
       "https://mediaservice.audi.com/media/live/50900/fly720x405n1/8wc/2020.png",
   },
@@ -47,8 +50,9 @@ export const Cars = [
     combustion: 12,
     price_category: "Premium",
     available: true,
+    price: 400,
     image:
-      "https://www.bmw.pl/content/dam/bmw/common/all-models/m-series/m5-sedan/2021/Overview/bmw-m5-cs-onepager-mc-m5-core-highlights-hero-teaser-desktop.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1627456764859.jpg",
+      "https://atuk-prod-cz-dealer-sites-resources.s3-eu-west-1.amazonaws.com/imglib/BMWDealer2016/img/newcars/intropics/M5-Saloon-intro.png",
   },
   // {
   //   brand: "",

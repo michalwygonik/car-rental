@@ -1,0 +1,124 @@
+.rental__window__container {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+.rental__window {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background-color: var(--gray);
+  border-radius: 40px;
+}
+.chosen__car__container {
+  width: 40%;
+  height: 100%;
+}
+.chosen__car__header {
+  font-size: 34px;
+  color: white;
+  margin: 20px;
+  text-align: center;
+}
+.chosen__car__img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+.chosen__car__model {
+  font-size: 28px;
+  color: white;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+.chosen__car__info {
+  font-size: 18px;
+  color: white;
+  list-style-type: none;
+  margin: 0 0 0 60px;
+  line-height: 40px;
+}
+.rental__window__buttons {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  bottom: 0;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px 0;
+}
+.rental__cancel__button {
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: var(--intense-red);
+  transition: 0.2s;
+}
+.rental__next__button {
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: var(--orange);
+  transition: 0.2s;
+}
+.steps {
+  margin-top: 30px;
+}
+.p-steps .p-steps-item .p-menuitem-link {
+  background: none !important;
+}
+.p-steps .p-steps-item.p-highlight .p-steps-title {
+  color: white !important;
+}
+.p-steps .p-steps-item.p-highlight .p-steps-number {
+  background-color: white !important;
+  color: black !important;
+}
+
+.rental__cancel__button:hover,
+.rental__next__button:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+@media (width <=1300px) {
+  .chosen__car__header {
+    font-size: 20px;
+  }
+  .chosen__car__model {
+    font-size: 18px;
+  }
+  .chosen__car__img {
+    margin: -40px 0 -40px 0;
+  }
+  .chosen__car__info {
+    font-size: 16px;
+    margin: 10px;
+    line-height: 25px;
+  }
+}
+@media (width <=1024px) {
+  .chosen__car__container {
+    display: none;
+  }
+  .rental__window__buttons {
+    font-size: 20px;
+  }
+}
+@media (width <=480px) {
+  .rental__window {
+    height: 90%;
+  }
+  .rental__window__buttons {
+    font-size: 15px;
+  }
+}

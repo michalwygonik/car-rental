@@ -58,10 +58,10 @@
   visibility: hidden;
   opacity: 0;
   text-align: left;
-  top: 20px;
   transition: 0.2s;
   list-style-type: none;
   top: 200px;
+  left: 30px;
 }
 .car__card__container:hover {
   transform: scale(1.1);

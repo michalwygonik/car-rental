@@ -1,0 +1,130 @@
+@import "~primereact/resources/primereact.min.css";
+
+.rental__window__form__container {
+  width: 100%;
+}
+.rental__window__form__container form {
+  display: flex;
+}
+.form__main {
+  width: 50%;
+  height: 100%;
+  padding: 40px;
+  font-size: 15px;
+}
+.form__calendar__header,
+.form__main__header {
+  font-size: 26px;
+  color: white;
+  text-align: center;
+}
+
+.form__main__block {
+  padding: 15px 0 0 0;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.form__main__block label {
+  color: white;
+}
+.form__main__block__input {
+  width: 300px;
+}
+.p-slider {
+  background-color: white !important;
+  outline: none;
+  margin-top: 10px;
+  height: 10px !important;
+  width: 300px;
+}
+.form__calendar {
+  padding: 40px;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+.calendar {
+  padding: 20px 0 0 0;
+}
+.p-datepicker .p-datepicker-header {
+  padding: 0 !important;
+}
+.p-datepicker table td {
+  padding: 1px !important;
+}
+.p-datepicker table th {
+  padding: 0 !important;
+}
+
+@media (width<=1300px) {
+  .form__calendar__header,
+  .form__main__header {
+    font-size: 25px;
+  }
+  .form__main {
+    padding: 20px;
+    width: 40%;
+  }
+  .form__main__block__input {
+    width: 100%;
+  }
+  .p-slider {
+    width: 100%;
+  }
+  .form__calendar {
+    padding: 20px;
+    width: 60%;
+  }
+  .p-datepicker table td {
+    padding: 1px !important;
+  }
+}
+@media (width<=480px) {
+  form {
+    flex-direction: column;
+  }
+  .form__main {
+    width: 100%;
+  }
+  .form__calendar {
+    width: 100%;
+  }
+  .form__main__header,
+  .form__calendar__header {
+    font-size: 12px;
+    margin: -5px;
+  }
+  .form__main__block {
+    padding: 4px;
+  }
+  .form__main__block label {
+    font-size: 15px;
+  }
+  .p-inputtext {
+    font-size: 14px !important;
+    padding: 5px 2px !important;
+  }
+  .p-slider {
+    height: 8px !important;
+  }
+  .p-steps {
+    margin-top: 10px !important;
+    font-size: 8px !important;
+    width: 80%;
+    left: 30px;
+  }
+  .p-steps-number {
+    font-size: 12px !important;
+    min-width: 15px !important;
+    height: 15px !important;
+  }
+  .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
+  .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+    font-size: 12px !important;
+    margin: 0 !important;
+  }
+  .p-datepicker table {
+    font-size: 8px !important;
+  }
+}

@@ -11,18 +11,7 @@ const CarsFleet = () => {
 
       <div className="cars__fleet__container">
         {Cars.map((car) => {
-          return car.available ? (
-            <CarItem
-              brand={car.brand}
-              model={car.model}
-              year={car.year}
-              image={car.image}
-              gearbox={car.gearbox}
-              fuelType={car.fuel_type}
-              priceCategory={car.price_category}
-              key={car.model}
-            />
-          ) : null;
+          return car.available ? <CarItem car={car} key={car.model} /> : null;
         })}
       </div>
     </>

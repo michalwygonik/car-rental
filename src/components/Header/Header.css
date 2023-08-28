@@ -1,7 +1,7 @@
 @import url("/src/utils/colors.css");
 header {
   background-color: var(--gray);
-  color: var(--red);
+  color: var(--background);
   font-size: 32px;
   padding: 10px;
 }
