@@ -82,7 +82,12 @@ const Calculations = (props) => {
             </tr>
             <tr>
               <td>Driver has held the licence for less than 5 years</td>
-              <td>{Math.round(driverAgeLess * 100) / 100} $</td>
+              <td>
+                {driver_licence__date <= 5
+                  ? Math.round(driverAgeLess * 100) / 100
+                  : "0"}{" "}
+                $
+              </td>
             </tr>
             <tr>
               <td>Fuel price</td>
