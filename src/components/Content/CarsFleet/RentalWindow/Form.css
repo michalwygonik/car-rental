@@ -18,7 +18,13 @@
   color: white;
   text-align: center;
 }
-
+.error {
+  font-size: 12px;
+  margin: 0 10px 0 10px;
+  color: #ff2c2c;
+  font-style: italic;
+  font-weight: 100;
+}
 .form__main__block {
   padding: 15px 0 0 0;
   font-size: 20px;
@@ -30,8 +36,15 @@
 }
 .form__main__block__input {
   width: 300px;
+  border: 3px solid rgba(0, 0, 0, 0) !important;
+  border-radius: 5px;
 }
-.p-slider {
+.form__main__block__input__error {
+  width: 300px;
+  border: 3px solid #ff2c2c !important;
+  border-radius: 5px;
+}
+.kilometres {
   background-color: white !important;
   outline: none;
   margin-top: 10px;
@@ -45,7 +58,11 @@
   text-align: center;
 }
 .calendar {
-  padding: 20px 0 0 0;
+  margin: 20px 0 0 0;
+}
+.p-datepicker {
+  padding: 0 !important;
+  border: 0 !important;
 }
 .p-datepicker .p-datepicker-header {
   padding: 0 !important;
@@ -55,6 +72,22 @@
 }
 .p-datepicker table th {
   padding: 0 !important;
+}
+.submit__button {
+  margin: 20px 0 0 0;
+  font-size: 26px;
+  border-radius: 15px;
+  padding: 10px 20px;
+  background-color: var(--green);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;
+  outline: none;
+}
+.submit__button:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
 }
 
 @media (width<=1300px) {
@@ -67,6 +100,9 @@
     width: 40%;
   }
   .form__main__block__input {
+    width: 100%;
+  }
+  .form__main__block__input__error {
     width: 100%;
   }
   .p-slider {
@@ -92,21 +128,22 @@
   }
   .form__main__header,
   .form__calendar__header {
-    font-size: 12px;
-    margin: -5px;
+    font-size: 14px;
+    margin: -10px;
   }
   .form__main__block {
-    padding: 4px;
+    padding: 2px;
   }
   .form__main__block label {
-    font-size: 15px;
+    font-size: 12px;
   }
   .p-inputtext {
-    font-size: 14px !important;
-    padding: 5px 2px !important;
+    font-size: 12px !important;
+    padding: 1px !important;
   }
-  .p-slider {
+  .kilometres {
     height: 8px !important;
+    width: 100%;
   }
   .p-steps {
     margin-top: 10px !important;
@@ -123,8 +160,22 @@
   .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
     font-size: 12px !important;
     margin: 0 !important;
+    padding: 0 !important;
   }
   .p-datepicker table {
-    font-size: 8px !important;
+    font-size: 12px !important;
+    border-spacing: 0 !important;
+  }
+  .p-datepicker table {
+    line-height: 2px;
+  }
+  .p-datepicker table td {
+    padding: 0 !important;
+  }
+  .p-datepicker table tr {
+    margin: 0 !important;
+  }
+  .submit__button {
+    font-size: 15px;
   }
 }

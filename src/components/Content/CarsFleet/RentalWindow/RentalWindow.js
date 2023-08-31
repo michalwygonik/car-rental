@@ -24,7 +24,15 @@ const RentalWindow = (props) => {
     console.log("submitted");
   };
 
-  const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+  } = useFormik({
     initialValues: {
       name: "",
       email: "",
@@ -101,6 +109,8 @@ const RentalWindow = (props) => {
             {activeStepIndex === 0 && (
               <Form
                 values={values}
+                errors={errors}
+                touched={touched}
                 handleBlur={handleBlur}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
@@ -116,9 +126,9 @@ const RentalWindow = (props) => {
               {activeStepIndex === 3 ? (
                 <span>Finish ordering</span>
               ) : (
-                <span>
+                <button>
                   Cancel <i className="fa-solid fa-xmark"></i>
-                </span>
+                </button>
               )}
             </div>
             {activeStepIndex <= 2 ? (
@@ -127,13 +137,13 @@ const RentalWindow = (props) => {
                 onClick={(e) => setActiveStepIndex(activeStepIndex + 1)}
               >
                 {activeStepIndex === 2 ? (
-                  <span>
+                  <button>
                     Confirm <i className="fa-solid fa-check"></i>
-                  </span>
+                  </button>
                 ) : (
-                  <span>
+                  <button disabled={!isSubmitting}>
                     Next Step <i className="fa-solid fa-angles-right"></i>
-                  </span>
+                  </button>
                 )}
               </div>
             ) : null}

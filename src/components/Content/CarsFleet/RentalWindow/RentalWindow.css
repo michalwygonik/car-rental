@@ -53,23 +53,35 @@
   display: flex;
   justify-content: space-evenly;
   bottom: 0;
-  font-size: 25px;
-  color: white;
   text-align: center;
-  cursor: pointer;
   margin: 20px 0;
 }
-.rental__cancel__button {
+.rental__cancel__button button {
   padding: 10px 20px;
   border-radius: 15px;
   background-color: var(--intense-red);
   transition: 0.2s;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: 0;
 }
-.rental__next__button {
+.rental__next__button button {
   padding: 10px 20px;
   border-radius: 15px;
   background-color: var(--orange);
   transition: 0.2s;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+}
+button:disabled {
+  cursor: default;
+  transform: scale(1);
+  background-color: gray;
 }
 .steps {
   margin-top: 30px;
@@ -85,8 +97,8 @@
   color: black !important;
 }
 
-.rental__cancel__button:hover,
-.rental__next__button:hover {
+.rental__cancel__button button:hover,
+.rental__next__button button:hover {
   transform: scale(1.1);
   transition: 0.2s;
 }
@@ -110,15 +122,15 @@
   .chosen__car__container {
     display: none;
   }
-  .rental__window__buttons {
-    font-size: 20px;
+  .rental__window__buttons button {
+    font-size: 18px;
   }
 }
 @media (width <=480px) {
   .rental__window {
     height: 90%;
   }
-  .rental__window__buttons {
-    font-size: 15px;
+  .rental__window__buttons button {
+    font-size: 14px;
   }
 }
