@@ -7,7 +7,6 @@ const Form = (props) => {
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     props;
 
-  // console.log(values);
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -32,7 +31,6 @@ const Form = (props) => {
                   : "form__main__block__input"
               }
               placeholder="Enter your name"
-              onBlur={handleBlur}
             />
           </div>
 
@@ -53,7 +51,6 @@ const Form = (props) => {
                   : "form__main__block__input"
               }
               placeholder="Enter your e-mail"
-              onBlur={handleBlur}
             />
           </div>
 
@@ -69,13 +66,13 @@ const Form = (props) => {
               dateFormat="dd/mm/yy"
               value={values.birth}
               onChange={handleChange}
+              maxDate={maxDate}
               className={
                 errors.birth && touched.birth
                   ? "form__main__block__input__error"
                   : "form__main__block__input"
               }
               placeholder="Enter your birth date"
-              onBlur={handleBlur}
             />
           </div>
 
@@ -99,7 +96,6 @@ const Form = (props) => {
                   : "form__main__block__input"
               }
               placeholder="Enter date of your driver licence"
-              onBlur={handleBlur}
             />
           </div>
 

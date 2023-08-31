@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Steps } from "primereact/steps";
 import { useFormik } from "formik";
 import { basicSchema } from "./FormikSchema";
+import Calculations from "./Calculations";
 
 const RentalWindow = (props) => {
   const {
@@ -20,9 +21,7 @@ const RentalWindow = (props) => {
     image,
   } = props;
 
-  const onSubmit = () => {
-    console.log("submitted");
-  };
+  const onSubmit = () => {};
 
   const {
     values,
@@ -44,7 +43,6 @@ const RentalWindow = (props) => {
     validationSchema: basicSchema,
     onSubmit,
   });
-  console.log(errors);
 
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const stepsItems = [
@@ -116,7 +114,15 @@ const RentalWindow = (props) => {
                 handleSubmit={handleSubmit}
               />
             )}
-            {activeStepIndex === 1 && <span>Calculations</span>}
+            {activeStepIndex === 1 && (
+              <Calculations
+                values={values}
+                price={price}
+                priceCategory={priceCategory}
+                combustion={combustion}
+                fuelType={fuelType}
+              />
+            )}
             {activeStepIndex === 2 && <span>Payment</span>}
             {activeStepIndex === 3 && <span>Finish</span>}
           </div>
@@ -124,7 +130,7 @@ const RentalWindow = (props) => {
           <div className="rental__window__buttons">
             <div className="rental__cancel__button" onClick={endRental}>
               {activeStepIndex === 3 ? (
-                <span>Finish ordering</span>
+                <button>Finish ordering</button>
               ) : (
                 <button>
                   Cancel <i className="fa-solid fa-xmark"></i>
