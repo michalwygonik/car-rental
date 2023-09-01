@@ -54,9 +54,9 @@ const Calculations = (props) => {
   let totalRentalPrice = 0;
 
   if (driver_licence__date <= 5) {
-    totalRentalPrice = carPrice + rentalDaysPrice + fuelPrice;
-  } else {
     totalRentalPrice = (carPrice + rentalDaysPrice + fuelPrice) * 1.2;
+  } else {
+    totalRentalPrice = carPrice + rentalDaysPrice + fuelPrice;
   }
   const driverAgeLess = totalRentalPrice * 1.2 - totalRentalPrice;
 
