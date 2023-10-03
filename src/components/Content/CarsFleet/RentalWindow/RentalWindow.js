@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Steps } from "primereact/steps";
 import { useFormik } from "formik";
 import { basicSchema } from "./FormikSchema";
-import Calculations from "./Calculations";
+import RentalDetails from "./RentalDetails";
 
 const RentalWindow = (props) => {
   const {
@@ -12,15 +12,14 @@ const RentalWindow = (props) => {
     brand,
     model,
     year,
-    fuelType,
-    horsePower,
+    fuel_type,
+    horse_power,
     gearbox,
     combustion,
-    priceCategory,
+    price_category,
     price,
     image,
   } = props;
-
   const onSubmit = () => {};
 
   const {
@@ -74,11 +73,11 @@ const RentalWindow = (props) => {
               </li>
               <li>
                 <i className="fa-solid fa-gas-pump"></i>
-                <strong> Fuel type:</strong> {fuelType}
+                <strong> Fuel type:</strong> {fuel_type}
               </li>
               <li>
                 <i className="fa-solid fa-car"></i>
-                <strong> Horse power:</strong> {horsePower}
+                <strong> Horse power:</strong> {horse_power}
               </li>
               <li>
                 <i className="fa-solid fa-gear"></i>
@@ -90,7 +89,7 @@ const RentalWindow = (props) => {
               </li>
               <li>
                 <i className="fa-solid fa-tags"></i>
-                <strong> Price category:</strong> {priceCategory}
+                <strong> Price category:</strong> {price_category}
               </li>
               <li>
                 <i className="fa-solid fa-money-check-dollar"></i>
@@ -115,12 +114,12 @@ const RentalWindow = (props) => {
               />
             )}
             {activeStepIndex === 1 && (
-              <Calculations
+              <RentalDetails
                 values={values}
                 price={price}
-                priceCategory={priceCategory}
+                priceCategory={price_category}
                 combustion={combustion}
-                fuelType={fuelType}
+                fuelType={fuel_type}
               />
             )}
             {activeStepIndex === 2 && <span>Payment</span>}
@@ -137,22 +136,32 @@ const RentalWindow = (props) => {
                 </button>
               )}
             </div>
-            {activeStepIndex <= 2 ? (
-              <div
-                className="rental__next__button"
-                onClick={(e) => setActiveStepIndex(activeStepIndex + 1)}
-              >
-                {activeStepIndex === 2 ? (
-                  <button>
-                    Confirm <i className="fa-solid fa-check"></i>
+            {activeStepIndex <= 2 && (
+              <>
+                <div
+                  className="rental__return__button"
+                  onClick={() => setActiveStepIndex(activeStepIndex - 1)}
+                >
+                  <button disabled={activeStepIndex === 0}>
+                    <i className="fa-solid fa-angles-left"></i> Return
                   </button>
-                ) : (
-                  <button disabled={!isSubmitting}>
-                    Next Step <i className="fa-solid fa-angles-right"></i>
-                  </button>
-                )}
-              </div>
-            ) : null}
+                </div>
+                <div
+                  className="rental__next__button"
+                  onClick={() => setActiveStepIndex(activeStepIndex + 1)}
+                >
+                  {activeStepIndex === 2 ? (
+                    <button>
+                      Confirm <i className="fa-solid fa-check"></i>
+                    </button>
+                  ) : (
+                    <button disabled={!isSubmitting}>
+                      Next Step <i className="fa-solid fa-angles-right"></i>
+                    </button>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

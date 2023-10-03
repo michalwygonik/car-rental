@@ -67,6 +67,17 @@
   outline: none;
   border: 0;
 }
+.rental__return__button button {
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: var(--red);
+  transition: 0.2s;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+}
 .rental__next__button button {
   padding: 10px 20px;
   border-radius: 15px;
@@ -78,9 +89,8 @@
   outline: none;
   border: 0;
 }
-button:disabled {
+button[disabled] {
   cursor: default;
-  transform: scale(1);
   background-color: gray;
 }
 .steps {
@@ -97,8 +107,9 @@ button:disabled {
   color: black !important;
 }
 
-.rental__cancel__button button:hover,
-.rental__next__button button:hover {
+.rental__cancel__button button:not([disabled]):hover,
+.rental__next__button button:not([disabled]):hover,
+.rental__return__button button:not([disabled]):hover {
   transform: scale(1.1);
   transition: 0.2s;
 }

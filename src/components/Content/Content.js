@@ -6,7 +6,7 @@ const Content = () => {
     <>
       <main className="main__content">
         <video
-          src="./videos/car_riding_in_the_forest.mp4"
+          src={process.env.PUBLIC_URL + "/videos/car_riding_in_the_forest.mp4"}
           loop
           autoPlay
           muted
@@ -15,7 +15,6 @@ const Content = () => {
         <a href="#availableCars">
           <div className="check__out__button">Check out our car fleet!</div>
         </a>
-
         <CarsFleet />
       </main>
     </>

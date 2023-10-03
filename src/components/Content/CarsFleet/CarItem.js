@@ -3,18 +3,7 @@ import { useState } from "react";
 import RentalWindow from "./RentalWindow/RentalWindow";
 
 const CarItem = (props) => {
-  const {
-    brand,
-    model,
-    year,
-    fuel_type,
-    horse_power,
-    gearbox,
-    combustion,
-    price_category,
-    price,
-    image,
-  } = props.car;
+  const { brand, model, year, fuel_type, gearbox, price, image } = props.car;
 
   const [rentalActive, setRentalActive] = useState(false);
 
@@ -58,19 +47,7 @@ const CarItem = (props) => {
         </div>
       </div>
       {rentalActive ? (
-        <RentalWindow
-          brand={brand}
-          model={model}
-          year={year}
-          fuelType={fuel_type}
-          horsePower={horse_power}
-          gearbox={gearbox}
-          combustion={combustion}
-          priceCategory={price_category}
-          price={price}
-          image={image}
-          endRental={handleRentalActive}
-        />
+        <RentalWindow {...props.car} endRental={handleRentalActive} />
       ) : null}
     </>
   );
