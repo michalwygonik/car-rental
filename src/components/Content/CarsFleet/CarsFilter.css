@@ -1,0 +1,36 @@
+.cars__fleet__filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 50px 0;
+  font-size: 24px;
+}
+.filter__option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 30px;
+}
+.filter__option select {
+  padding: 5px 10px;
+  font-size: 18px;
+  border: 2px solid var(--light-gray);
+  border-radius: 10px;
+}
+@media (width<=1024px) {
+  .cars__fleet__filter {
+    padding: 0 0 25px 0;
+    font-size: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .filter__option {
+    margin: 10px 20px;
+  }
+  .filter__option select {
+    font-size: 14px;
+    border-radius: 8px;
+  }
+}
+@media (width<=480px) {
+}
