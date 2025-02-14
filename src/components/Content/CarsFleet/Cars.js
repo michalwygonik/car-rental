@@ -68,47 +68,7 @@ export const Cars = [
     image:
       "https://mediaservice.audi.com/media/live/50900/fly1400x601n1/8yaar/2021.png?wid=850",
   },
-  {
-    brand: "Tuk",
-    model: "Tuk",
-    year: 1989,
-    fuel_type: "Gasoline",
-    horse_power: 20,
-    gearbox: "Manual",
-    combustion: 4,
-    price_category: "Basic",
-    available: true,
-    price: 100,
-    image:
-      "https://cdn.pixabay.com/photo/2019/03/10/16/05/tuk-tuk-4046465_960_720.png",
-  },
-  {
-    brand: "FSO",
-    model: "Polonez",
-    year: 1999,
-    fuel_type: "Gasoline",
-    horse_power: 82,
-    gearbox: "Manual",
-    combustion: 7,
-    price_category: "Standard",
-    available: true,
-    price: 120,
-    image:
-      "https://panekcs.pl/templates/yootheme/cache/78/polonez_340x165-7885d540.png",
-  },
-  {
-    brand: "URSUS",
-    model: "C-360",
-    year: 1980,
-    fuel_type: "Diesel",
-    horse_power: 60,
-    gearbox: "Manual",
-    combustion: 7,
-    price_category: "Premium",
-    available: true,
-    price: 80,
-    image: "https://www.e-skladnica.pl/public/assets/ursus2c360.jpg.png",
-  },
+
   // {
   //   brand: "",
   //   model: "",
